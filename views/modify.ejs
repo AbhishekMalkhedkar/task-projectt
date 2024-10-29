@@ -11,11 +11,15 @@
 
 <body>
   <div class="container">
+    <!-- Back button at the top-left -->
+    <button type="button" class="back-button" onclick="window.location.href='/'">
+      <i class="fas fa-arrow-left"></i> Back
+    </button>
+
     <div class="card">
       <h1 class="form-heading"><i class="fas fa-edit"></i> <%= heading %></h1>
 
       <% if (locals.task) { %>
-        
         
         <form id="editTaskForm" method="post" action="/api/task/<%= task._id %>" class="task-form">
           
@@ -23,7 +27,7 @@
             <label for="title">Task Title</label>
             <div class="input-with-icon">
               <input type="text" name="title" value="<%= task.title %>" placeholder="Task Title" required class="form-input">
-              <i class="fas fa-tasks"></i>
+              
             </div>
           </div>
 
@@ -31,7 +35,7 @@
             <label for="description">Description</label>
             <div class="input-with-icon">
               <textarea name="description" rows="4" required class="form-input" placeholder="Task Description"><%= task.description %></textarea>
-              <i class="fas fa-align-left"></i>
+              
             </div>
           </div>
 
@@ -43,28 +47,33 @@
                 <option value="in-progress" <%= task.status === 'in-progress' ? 'selected' : '' %>>In Progress</option>
                 <option value="completed" <%= task.status === 'completed' ? 'selected' : '' %>>Completed</option>
               </select>
-              <i class="fas fa-clipboard-check"></i>
+              
             </div>
           </div>
 
           <div class="input-group">
             <label for="dueDate">Due Date</label>
             <div class="input-with-icon">
-              <input type="date" name="dueDate" value="<%= task.dueDate %>" required class="form-input">
-              <i class="fas fa-calendar-alt"></i>
+              <input type="date" name="dueDate" 
+       value="<%= task.dueDate && !isNaN(new Date(task.dueDate)) ? new Date(task.dueDate).toISOString().split('T')[0] : '' %>" 
+       required class="form-input">
+              
             </div>
           </div>
+          
 
           <button class="btn full-width" type="submit"><i class="fas fa-save"></i> <%= submit %></button>
         </form>
+        
       <% } else { %>
+
         <form id="newTaskForm" method="post" action="/api/tasks" class="task-form">
           
           <div class="input-group">
             <label for="title">Task Title</label>
             <div class="input-with-icon">
               <input type="text" name="title" placeholder="Task Title" required class="form-input">
-              <i class="fas fa-tasks"></i>
+              
             </div>
           </div>
 
@@ -72,7 +81,7 @@
             <label for="description">Description</label>
             <div class="input-with-icon">
               <textarea name="description" placeholder="Task Description" rows="4" required class="form-input"></textarea>
-              <i class="fas fa-align-left"></i>
+              
             </div>
           </div>
 
@@ -84,7 +93,7 @@
                 <option value="in-progress">In Progress</option>
                 <option value="completed">Completed</option>
               </select>
-              <i class="fas fa-clipboard-check"></i>
+              
             </div>
           </div>
 
@@ -92,17 +101,39 @@
             <label for="dueDate">Due Date</label>
             <div class="input-with-icon">
               <input type="date" name="dueDate" required class="form-input">
-              <i class="fas fa-calendar-alt"></i>
+              
             </div>
           </div>
 
           <button class="btn full-width" type="submit"><i class="fas fa-save"></i> <%= submit %></button>
         </form>
+
       <% } %>
 
     </div>
   </div>
-</body>
 
+  <style>
+    /* Position the back button at the top-left */
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background-color: #efe5ff;
+      border: none;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 16px;
+      color: #333;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .back-button:hover {
+      background-color: #d0c8dd;
+    }
+  </style>
+</body>
 
 </html>

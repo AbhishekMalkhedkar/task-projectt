@@ -1,6 +1,6 @@
 body {
   font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
+  background-color: #efe5ff;
   color: #333;
   margin: 0;
   padding: 0;
@@ -74,7 +74,7 @@ body {
 
 .task-title {
   font-size: 1.5rem;
-  color: #007bff;
+  color: #367ecc
 }
 
 .task-actions {
@@ -83,7 +83,7 @@ body {
 }
 
 .task-actions a {
-  color: #007bff;
+  color: #367ecc;
   text-decoration: none;
   font-size: 1.2rem;
   transition: color 0.2s ease;
@@ -95,43 +95,34 @@ body {
 
 .task-desc {
   font-size: 1rem;
-  color: #555;
+  color: #000000;
   margin-bottom: 15px;
 }
 
 .task-status {
   font-size: 1rem;
-  color: #333;
+  color: #000000;
   margin-bottom: 10px;
 }
 
-.task-status strong {
-  color: #28a745;
+/* Status colors based on task status */
+.task-status strong.status-pending {
+  color: red;
+}
+
+.task-status strong.status-in-progress {
+  color: orange;
+}
+
+.task-status strong.status-completed {
+  color: green;
 }
 
 .task-date {
   font-size: 0.9rem;
-  color: #888;
+  color: #000000;
 }
 
 .task-date i {
   margin-right: 5px;
-}
-
-.btn {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 15px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-size: 1rem;
-  transition: background-color 0.3s ease;
-}
-
-.btn:hover {
-  background-color: #0056b3;
-}
-
-#postsList li {
-  margin-bottom: 1.5rem;
 }

@@ -3,6 +3,7 @@ const bodyParser = require("body-parser");
 const axios = require("axios");
 const path = require("path");
 const convert = require("./middleware/date");
+const convertToDDMMYYYY = require("./middleware/date");
 
 const app = express();
 const PORT = 3000;
@@ -31,7 +32,7 @@ app.get("/new", (req, res) => {
 
 app.post("/api/tasks", async (req, res) => {
     try {
-        const dueDate = convert(req.body.dueDate)
+        const dueDate = convertToDDMMYYYY(req.body.dueDate);
         const obj = {
             title : req.body.title,
             description : req.body.description,

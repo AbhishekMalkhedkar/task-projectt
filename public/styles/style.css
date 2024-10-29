@@ -1,29 +1,31 @@
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: #f8f9fa;
-    color: #333;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 40px auto;
-    padding: 0 20px;
-  }
-  
-  .card {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  }
-  
-  .form-heading {
-    font-size: 1.8rem;
-    color: #007bff;
-    display: flex;
-    align-items: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: #efe5ff;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.card {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+
+}
+
+
+.form-heading {
+  font-size: 1.8rem;
+  color: #367ecc;
+  display: flex;
+  align-items: center;
     gap: 10px;
     margin-bottom: 20px;
   }
@@ -48,21 +50,21 @@ body {
   .input-with-icon i {
     position: absolute;
     right: 15px;
-    color: #007bff;
+    color: #367ecc;
   }
   
   .form-input {
     width: 100%;
     padding: 10px;
-    padding-right: 40px;
+    padding-right: 6px;
     font-size: 1rem;
-    border: 2px solid #007bff;
+    border: 2px solid #367ecc;
     border-radius: 5px;
     transition: border-color 0.3s ease;
   }
   
   .form-input:focus {
-    border-color: #0056b3;
+    border-color: #367ecc;
     outline: none;
   }
   
@@ -71,8 +73,8 @@ body {
   }
   
   .btn {
-    background-color: #007bff;
-    color: white;
+    background-color: #367ecc;
+    color: #efe5ff;
     padding: 12px 20px;
     border: none;
     border-radius: 5px;
@@ -86,7 +88,7 @@ body {
   }
   
   .btn:hover {
-    background-color: #0056b3;
+    background-color: #315a87;
   }
   
   .full-width {
